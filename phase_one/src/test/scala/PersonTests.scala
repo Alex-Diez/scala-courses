@@ -1,5 +1,3 @@
-package scala.courses
-
 import java.time._
 
 import org.scalatest.{FunSpec, Matchers}
@@ -38,7 +36,7 @@ class PersonTests extends FunSpec with Matchers {
     Person.age(alex)(clock) shouldBe 27
   }
 
-  private class MockOutput extends Output {
+  private class MockOutput extends PersonOutput {
     var messages: Seq[String] = Seq()
 
     override def println(string: String): Unit = messages = string +: messages

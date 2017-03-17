@@ -11,8 +11,7 @@
 How to say `"hello world!"`
 
 ```sh
-$ cd phase-1/hello-world/
-$ sbt run
+$ sbt "phase_one/run-main HelloWorld"
 ```
 
 will print out
@@ -21,11 +20,16 @@ will print out
 Hello world!
 ```
 
+Alternatively
+
+```sh
+$ scala phase_one/src/main/scala/HelloWorld.scala
+```
+
 How to say `hello` to anybody
 
 ```sh
-$ cd phase-1/hello-world/
-$ sbt "run Alex Dima"
+$ sbt "phase_one/run-main HelloWorld Alex Dima"
 ```
 
 will print out
@@ -35,13 +39,18 @@ Hello Alex!
 Hello Dima!
 ```
 
+Alternatively
+
+```sh
+$ scala phase_one/src/main/scala/HelloWorld.scala Alex Dima
+```
+
 ### Person
 
 How to know my current age ;)
 
 ```sh
-$ cd phase-1/person/
-$ sbt run
+$ sbt "phase_one/run-main Person"
 ```
 
 will print out something similar to
@@ -50,28 +59,38 @@ will print out something similar to
 Alex is 26 years old
 ```
 
+Alternatively
+
+```sh
+$ scala phase_one/src/main/scala/Person.scala
+```
+
 ### List of numbers
 
 How to test default list on sum of odds number and existing a prime number in the list
 
 ```sh
-$ cd phase-1/list-of-numbers/
-$ sbt run
+$ sbt "phase_one/run-main Numbers"
 ```
 
 will print out
 
 ```
-You haven't provided a list. All operation will be performed on default list, which is List(1, 2, 3, 4, 5)
+All operation will be performed on List(1, 2, 3, 4, 5)
 List(1, 2, 3, 4, 5) contains at least one prime number
 Sum of odds numbers in List(1, 2, 3, 4, 5) equals to 9
+```
+
+Alternatively
+
+```sh
+$ scala phase_one/src/main/scala/Numbers.scala
 ```
 
 How to test specified list
 
 ```sh
-$ cd phase-1/list-of-numbers/
-$ sbt "run 2 4 6 9 11"
+$ sbt "phase_one/run-main Numbers 2 4 6 9 11"
 ```
 
 will print out
@@ -80,4 +99,10 @@ will print out
 All operation will be performed on List(2, 4, 6, 9, 11)
 List(2, 4, 6, 9, 11) contains at least one prime number
 Sum of odds numbers in List(2, 4, 6, 9, 11) equals to 20
+```
+
+Alternatively
+
+```sh
+$ scala phase_one/src/main/scala/Numbers.scala 2 4 6 9 11
 ```

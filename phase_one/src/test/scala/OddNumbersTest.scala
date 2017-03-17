@@ -1,5 +1,3 @@
-package scala.courses
-
 import org.scalatest.{FunSpec, Matchers}
 
 class OddNumbersTest extends FunSpec with Matchers {

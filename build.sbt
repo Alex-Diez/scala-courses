@@ -1,5 +1,3 @@
-import sbt.Keys.mainClass
-
 name := "scala-courses"
 version := "1.0"
 scalaVersion := "2.12.1"
@@ -16,40 +14,8 @@ lazy val common = Seq(
 )
 
 lazy val root = Project("scala-courses", file("."))
-  .aggregate(helloWorld, firstPhaseExercise, listOfNumbers)
+  .aggregate(phase_one)
 
-lazy val helloWorld = project.in(file("phase-1/hello-world"))
+lazy val phase_one = project.in(file("phase_one"))
   .settings(common: _*)
-  .settings(
-    name := "hello-world",
-    artifactName := {
-      (sv: ScalaVersion, module: ModuleID, artifact: Artifact) =>
-        artifact.name + "." + artifact.extension
-    },
-
-    mainClass in(Compile, run) := Some("scala.courses.HelloWorld")
-  )
-
-lazy val firstPhaseExercise = project.in(file("phase-1/person"))
-  .settings(common: _*)
-  .settings(
-    name := "phase-1-person",
-    artifactName := {
-      (sv: ScalaVersion, module: ModuleID, artifact: Artifact) =>
-        artifact.name + "." + artifact.extension
-    },
-
-    mainClass in(Compile, run) := Some("scala.course.Person")
-  )
-
-lazy val listOfNumbers = project.in(file("phase-1/list-of-numbers"))
-  .settings(common: _*)
-  .settings(
-    name := "phase-1-list-of-numbers",
-    artifactName := {
-      (sv: ScalaVersion, module: ModuleID, artifact: Artifact) =>
-        artifact.name + "." + artifact.extension
-    },
-
-    mainClass in(Compile, run) := Some("scala.course.PrimeNumbers")
-  )
+  .settings(name := "phase-1")

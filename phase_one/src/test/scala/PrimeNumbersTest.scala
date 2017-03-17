@@ -1,5 +1,3 @@
-package scala.courses
-
 import org.scalatest.{FunSpec, Matchers}
 
 class PrimeNumbersTest extends FunSpec with Matchers {

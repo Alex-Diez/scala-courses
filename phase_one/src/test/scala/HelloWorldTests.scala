@@ -1,10 +1,8 @@
-package scala.courses
-
 import org.scalatest.{BeforeAndAfter, FunSpec, Matchers}
 
 class HelloWorldTests extends FunSpec with Matchers with BeforeAndAfter {
 
-  private class MockOutput extends Output {
+  private class MockOutput extends HelloWorldOutput {
     var messages: List[String] = List()
 
     override def println(message: String): Unit = messages = message :: messages

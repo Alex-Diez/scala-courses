@@ -41,3 +41,4 @@ ERROR message
 
 - What the difference between `BeforeAndAfter` and `BeforeAndAfterEach` traits in `scalatest`?
 - How to use `BeforeAndAfterEach` trait?
+- How to run test inside sub-module directory
