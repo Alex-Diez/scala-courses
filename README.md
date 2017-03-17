@@ -1,7 +1,7 @@
 # Repo for learning [Scala](http://scala-lang.org)
 
 ## Other links
-* [Questions that I faced and want to find answers](QUESTION.md)
+* [Questions that I faced and want to find answers](QUESTIONS.md)
 * [What I learnt when complete particular exercise](WHAT-I-LEARNT.md)
 
 ## Phase 1
