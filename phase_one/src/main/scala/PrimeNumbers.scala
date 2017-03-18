@@ -1,18 +1,11 @@
 // To test standard output
-trait NumbersOutput {
+trait PrimeNumbersOutput {
   def println(string: String): Unit = Console.println(string)
 }
 
-object Numbers {
+object PrimeNumbers {
 
-  implicit def output = new NumbersOutput {}
-
-  def sum(): (List[Int]) => ((Int) => Boolean) => Int =
-    (list: List[Int]) => (predicate: Int => Boolean) => list.filter(predicate).sum
-
-  def sumOf(list: List[Int]): (Int => Boolean) => Int = sum()(list)
-
-  def sumOfOdds(list: List[Int]): Int = sumOf(list)(item => item % 2 != 0)
+  implicit def output = new PrimeNumbersOutput {}
 
   def containsPrime(list: List[Int]): Boolean = list.exists(isPrime)
 
@@ -28,22 +21,16 @@ object Numbers {
       else args.toList.map(_.toInt)
     printList(numbers)
     printContainsPrime(numbers)
-    printSumOfOdds(numbers)
   }
 
-  def printList(list: List[Int])(implicit output: NumbersOutput): Unit = {
+  def printList(list: List[Int])(implicit output: PrimeNumbersOutput): Unit = {
       output.println(s"All operation will be performed on $list")
   }
 
-  def printContainsPrime(list: List[Int])(implicit output: NumbersOutput): Unit = {
+  def printContainsPrime(list: List[Int])(implicit output: PrimeNumbersOutput): Unit = {
     if (containsPrime(list))
       output.println(s"$list contains at least one prime number")
     else
       output.println(s"$list does not contain a prime number")
-  }
-
-  def printSumOfOdds(list: List[Int])(implicit output: NumbersOutput): Unit = {
-    val odds = sumOfOdds(list)
-    output.println(s"Sum of odds numbers in $list equals to $odds")
   }
 }

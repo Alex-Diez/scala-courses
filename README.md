@@ -65,12 +65,12 @@ Alternatively
 $ scala phase_one/src/main/scala/Person.scala
 ```
 
-### List of numbers
+### Prime numbers
 
-How to test default list on sum of odds number and existing a prime number in the list
+How to test default list on existing a prime number in the list
 
 ```sh
-$ sbt "phase_one/run-main Numbers"
+$ sbt "phase_one/run-main PrimeNumbers"
 ```
 
 will print out
@@ -78,19 +78,18 @@ will print out
 ```
 All operation will be performed on List(1, 2, 3, 4, 5)
 List(1, 2, 3, 4, 5) contains at least one prime number
-Sum of odds numbers in List(1, 2, 3, 4, 5) equals to 9
 ```
 
 Alternatively
 
 ```sh
-$ scala phase_one/src/main/scala/Numbers.scala
+$ scala phase_one/src/main/scala/PrimeNumbers.scala
 ```
 
 How to test specified list
 
 ```sh
-$ sbt "phase_one/run-main Numbers 2 4 6 9 11"
+$ sbt "phase_one/run-main PrimeNumbers 2 4 6 9 11"
 ```
 
 will print out
@@ -98,11 +97,50 @@ will print out
 ```
 All operation will be performed on List(2, 4, 6, 9, 11)
 List(2, 4, 6, 9, 11) contains at least one prime number
+```
+
+Alternatively
+
+```sh
+$ scala phase_one/src/main/scala/PrimeNumbers.scala 2 4 6 9 11
+```
+
+### Odd numbers
+
+How to test default list on existing a prime number in the list
+
+```sh
+$ sbt "phase_one/run-main OddNumbers"
+```
+
+will print out
+
+```
+All operation will be performed on List(1, 2, 3, 4, 5)
+Sum of odds numbers in List(1, 2, 3, 4, 5) equals to 9
+```
+
+Alternatively
+
+```sh
+$ scala phase_one/src/main/scala/OddNumbers.scala
+```
+
+How to test specified list
+
+```sh
+$ sbt "phase_one/run-main OddNumbers 2 4 6 9 11"
+```
+
+will print out
+
+```
+All operation will be performed on List(2, 4, 6, 9, 11)
 Sum of odds numbers in List(2, 4, 6, 9, 11) equals to 20
 ```
 
 Alternatively
 
 ```sh
-$ scala phase_one/src/main/scala/Numbers.scala 2 4 6 9 11
+$ scala phase_one/src/main/scala/OddNumbers.scala 2 4 6 9 11
 ```
