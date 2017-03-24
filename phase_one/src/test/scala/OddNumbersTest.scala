@@ -15,15 +15,13 @@ class OddNumbersTest extends FunSpec with Matchers with BeforeAndAfter {
   }
 
   it("sum of odds in empty list is zero") {
-    OddNumbers.sumOfOddsCurried(List()) shouldBe 0
+    OddNumbers.sumOfOdds(List()) shouldBe 0
   }
 
   it("sum odds number in a list") {
     val ints = List(1, 2, 3, 4, 5)
 
-    OddNumbers.sumOfOddsCurried(ints) shouldBe 1 + 3 + 5
-    OddNumbers.sumOfOddsPartial(ints) shouldBe 1 + 3 + 5
-    OddNumbers.sumOfOddsWithFunctor(ints) shouldBe 1 + 3 + 5
+    OddNumbers.sumOfOdds(ints) shouldBe 1 + 3 + 5
   }
 
   it ("output default list") {

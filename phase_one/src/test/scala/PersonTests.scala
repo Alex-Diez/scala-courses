@@ -15,25 +15,25 @@ class PersonTests extends FunSpec with Matchers {
   it("calculates Person age by year") {
     val clock = new MockClock(LocalDate.of(2016, 12, 15).atStartOfDay().toInstant(ZoneOffset.UTC))
 
-    Person.age(alex)(clock) shouldBe 26
+    Person.age(alex, clock) shouldBe 26
   }
 
   it("calculates Person age by year and month") {
     val clock = new MockClock(LocalDate.of(2017, 3, 15).atStartOfDay().toInstant(ZoneOffset.UTC))
 
-    Person.age(alex)(clock) shouldBe 26
+    Person.age(alex, clock) shouldBe 26
   }
 
   it("calculates Person age by year, month and day") {
     val clock = new MockClock(LocalDate.of(2017, 10, 22).atStartOfDay().toInstant(ZoneOffset.UTC))
 
-    Person.age(alex)(clock) shouldBe 26
+    Person.age(alex, clock) shouldBe 26
   }
 
   it("calculates future Person age") {
     val clock = new MockClock(LocalDate.of(2017, 10, 23).atStartOfDay().toInstant(ZoneOffset.UTC))
 
-    Person.age(alex)(clock) shouldBe 27
+    Person.age(alex, clock) shouldBe 27
   }
 
   private class MockOutput extends PersonOutput {
@@ -45,7 +45,7 @@ class PersonTests extends FunSpec with Matchers {
   it ("prints person name and age") {
     val clock = new MockClock(LocalDate.of(2017, 3, 15).atStartOfDay().toInstant(ZoneOffset.UTC))
     val output = new MockOutput
-    Person.printInfo(alex)(clock, output)
+    Person.printInfo(alex, clock, output)
 
     output.messages should contain ("Alex is 26 years old")
   }
