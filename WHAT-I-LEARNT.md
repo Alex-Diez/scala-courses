@@ -120,3 +120,104 @@ Notice that you need to use `=>` instead of `:` to specify what type anonymous f
     (list: List[Int]) => (predicate: Int => Boolean) => list.filter(predicate).sum
   //=============
 ```
+
+## Case classes
+
+* Case class is much more than just a class ...
+* scalac will:
+  1. generate companion object with `apply` method
+  2. make all constructor parameters `val`
+  3. generate `unapply` function that will be used in pattern matching
+
+```scala
+case class CaseComplex(real: Double, imaginary: Double) {
+
+  def +(that: CaseComplex): CaseComplex = CaseComplex(real + that.real, imaginary + that.imaginary)
+
+  def +(i: Int): CaseComplex = copy(real = real + i)
+
+  override def toString: String = this match {
+    case CaseComplex(_, 0) => s"$real"
+    case CaseComplex(0, img) => s"${img}i"
+    case CaseComplex(_, img) if img < 0 => s"$real - ${math.abs(img)}i"
+    case CaseComplex(_, img) => f"$real + ${img}i"
+  }
+}
+
+object CaseComplex {
+  def apply(real: Int): CaseComplex = new CaseComplex(real, 0)
+}
+```
+
+## Implicit function: Second part
+
+Import implicit function to help compile find them
+
+source class
+```scala
+import scala.math.BigInt._ //to import implicit function of conversion Int into BigInt
+
+class Factorial(private val n: BigInt) {
+
+  def iteratively: BigInt = {
+    var factorial: BigInt = 1 //factorial has type BigInt. Therefore, implicit {BigInt#int2bigInt(i: Int): BigInt} will be called on `1`
+    for (i <- 1 to n) //create range with type of Range.BigInt. implicit BigInt#int2bigInt(i: Int): BigInt will be called on `1`
+      factorial *= i
+    factorial
+  }
+}
+```
+
+Note that you need declare `factorial` type, another way compile would not infer it
+
+test class
+```scala
+class FactorialTest extends FlatSpec with Matchers {
+
+  it should "calculate factorial of 0" in {
+    new Factorial(0).iteratively shouldBe 1
+  }
+
+  it should "calculate factorial of 1" in {
+    new Factorial(1).iteratively shouldBe 1
+  }
+
+  it should "calculate factorial of 2" in {
+    new Factorial(2).iteratively shouldBe 2
+  }
+
+  it should "calculate factorial of 3" in {
+    new Factorial(3).iteratively shouldBe 6
+  }
+
+  it should "calculate factorial of 6" in {
+    new Factorial(6).iteratively shouldBe 1 * 2 * 3 * 4 * 5 * 6
+  }
+}
+```
+
+Note that you don't need to import `BigInt` to help compile to find `implicit` function to convert Int into BigInt
+
+## Iteration over `List` with tail recursive approach
+
+```scala
+def recursivePatternMatch(list: List[Int]): Int = {
+    @tailrec
+    def loop(n: Int, items: List[Int]): Int = items match {
+        case (item :: rest) => loop(n * item, rest)
+        case Nil => n
+    }
+
+    loop(1, list)
+}
+
+def recursiveHeadPatternMatch(list: List[Int]): Int = {
+    @tailrec
+    def loop(n: Int, items: List[Int]): Int = items.headOption match {
+        case Some(item) => loop(item * n, items.tail)
+        case None => n
+    }
+
+    loop(1, list)
+}
+```

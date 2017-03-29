@@ -4,6 +4,113 @@
 * [Questions that I faced and want to find answers](QUESTIONS.md)
 * [What I learnt when complete particular exercise](WHAT-I-LEARNT.md)
 
+## Phase 2
+
+### Complex numbers
+
+```sh
+$ sbt "phase_two/run-main Complex"
+```
+
+will print out
+
+```sh
+(10.0 + 2.0i) + (5.0 + 3.0i) = 15.0 + 5.0i
+(10.0 + 2.0i) - (5.0 + 3.0i) = 5.0 + -1.0i
+(10.0 + 2.0i) * (5.0 + 3.0i) = 44.0 + 40.0i
+(10.0 + 2.0i) / (5.0 + 3.0i) = 1.6 + -0.6i
+```
+
+alternatively
+
+```sh
+$ scala phase_two/src/main/scala/Complex.scala
+```
+
+### String collections
+
+```sh
+$ sbt "phase_two/run-main StringCollection"
+```
+
+will print out
+
+```sh
+import java.io.{File, FileInputStream, InputStream}
+import scala.io.Source
+class StringCollection() {
+  def lineLongerThan(stringsSource: InputStream)(size: Int):Iterator[String] = {
+      line <- Source.fromInputStream(stringsSource).getLines() if line.length > size
+    } yield line
+object StringCollection {
+  def main(args: Array[String]): Unit = {
+      longLine <- new StringCollection().lineLongerThan(new FileInputStream("./phase_two/src/main/scala/StringCollection.scala"))(10)
+    } println(longLine)
+```
+
+alternatively
+
+```sh
+$ scala phase_two/src/main/scala/StringCollection.scala
+```
+
+### Factorial
+
+```sh
+$ sbt "phase_two/runMain Factorial"
+```
+
+will print out
+
+```sh
+Factorial of 10 iteratively - 3628800
+Factorial of 10 recursively - 3628800
+```
+alternatively
+
+```sh
+$ scala phase_two/src/main/scala/Factorial.scala
+```
+
+### Product of List.range(1, 100)
+
+```sh
+$ sbt "phase_two/run-main Product"
+```
+
+will print out
+
+```sh
+The product of `List.range(1, 100)` calculated iteratively using `for` 0
+The product of `List.range(1, 100)` calculated iteratively using foreach 0
+The product of `List.range(1, 100)` calculated recursively 0
+```
+
+alternatively
+
+```sh
+$ scala phase_two/src/main/scala/Product.scala
+```
+
+### Fibonacci
+
+```sh
+$ sbt "phase_two/run-main Fibonacci"
+```
+
+will print out
+
+```sh
+Tenth fibonacci number is 55
+Tenth fibonacci number is 55
+```
+
+alternatively
+
+```sh
+$ scala phase_two/src/main/scala/Fibonacci.scala
+```
+
 ## Phase 1
 
 ### Hello world
