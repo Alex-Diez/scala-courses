@@ -41,9 +41,15 @@ class Complex(r: Double, i: Double) {
 }
 
 object Complex {
+  def apply(r: Double, i: Double): Complex = {
+    new Complex(r, i)
+  }
+}
+
+object ComplexMain {
   def main(args: Array[String]): Unit = {
-    val complex = new Complex(10, 2)
-    val anotherComplex = new Complex(5, 3)
+    val complex = Complex(10, 2)
+    val anotherComplex = Complex(5, 3)
     println(f"($complex) + ($anotherComplex) = ${complex + anotherComplex}")
     println(f"($complex) - ($anotherComplex) = ${complex - anotherComplex}")
     println(f"($complex) * ($anotherComplex) = ${complex * anotherComplex}")

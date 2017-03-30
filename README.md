@@ -9,7 +9,7 @@
 ### Complex numbers
 
 ```sh
-$ sbt "phase_two/run-main Complex"
+$ sbt "phase_two/run-main ComplexMain"
 ```
 
 will print out
