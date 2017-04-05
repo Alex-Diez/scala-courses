@@ -4,6 +4,76 @@
 * [Questions that I faced and want to find answers](QUESTIONS.md)
 * [What I learnt when complete particular exercise](WHAT-I-LEARNT.md)
 
+## Phase 3
+
+### ListMagic
+
+```sh
+$ sbt "phase_3/run-main ListMagic"
+```
+
+will print our
+
+```sh
+4 should be added in front of List(1, 2, 3) in `4 :: theList` List(4, 1, 2, 3)
+4 should be added at the end of the List(1, 2, 3) in `theList :+ 4` List(1, 2, 3, 4)
+4 should be prepend to List(1, 2, 3) in `4 +: theList` List(4, 1, 2, 3)
+List() should throw NoSuchElementException when call head
+List() should throw UnsupportedOperationException when call tail
+List() should None when call optionHead
+List(1, 2, 3) should have head 1
+List(1, 2, 3) should have tail List(2, 3)
+List(1, 2, 3) should have Some(1) when call headOption
+List(1, 2, 3) should not be copied when add head. `(4 :: theList).tail eq theList` is true
+List(1, 2, 3) should not be copied when prepend in front. `(4 +: theList).tail eq theList` is true
+List(1, 2, 3) should be concatenated with List(4, 5, 6, 7) when call `theList ++ theOtherList`. List(1, 2, 3, 4, 5, 6, 7)
+List(1, 2, 3) should be prepend to List(4, 5, 6, 7) when call `theList ::: theOtherList`. List(1, 2, 3, 4, 5, 6, 7)
+List(1, 2, 3) should contain items greater than 1
+List(1, 2, 3)'s items should be mapped in `theList.map(_ * 3)` List(3, 6, 9)
+List(1, 2, 3)'s items less than 1 should be filtered out by (_ > 1) List(2, 3)
+List(1, 2, 3) should be folded left into 16
+List(1, 2, 3) should be reversed when folded left with List() as accumulator.
+	theList.foldLeft(List[Int]())((acc, item) => item :: acc) == theList.reverse is true
+When `zip` is called on List(1, 2, 3) with List(4, 5, 6, 7) the last item is discarded. List((1,4), (2,5), (3,6))
+When `zipAll` is called on List(1, 2, 3) with List(4, 5, 6, 7) the last item is not discarded. List((1,4), (2,5), (3,6), (10,7))
+The other way to get List(1, 2, 3)'s tail is to call drop(1). `theList.drop(1) eq theList.tail` is true
+Items can be dropped by predicate (_ < 3) and List(1, 2, 3) become List(3)
+Items can be taken from List(1, 2, 3). The list of `theList.take(1)` is List(1)
+Items can be taken by predicate. List of items that greater than 3 is List(1, 2)
+```
+
+alternatively
+
+```sh
+$ scala phase_3/src/main/scala/ListMagic.scala
+```
+
+### WordCounts
+
+```sh
+$ sbt "phase_3/run-main WordCountsMain [hash|tree]"
+```
+
+will print out
+
+```sh
+The format appears 1 time
+The for appears 1 time
+The s appears 1 time
+The produce appears 1 time
+The Use appears 1 time
+The children appears 1 time
+The in appears 2 times
+The your appears 1 time
+...
+```
+
+alternatively
+
+```sh
+$ scala phase_3/src/main/scala/WordCounts.scala [tree|hash]
+```
+
 ## Phase 2
 
 ### Complex numbers
