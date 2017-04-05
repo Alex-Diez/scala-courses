@@ -9,7 +9,7 @@
 ### Complex numbers
 
 ```sh
-$ sbt "phase_two/run-main ComplexMain"
+$ sbt "phase_2/run-main ComplexMain"
 ```
 
 will print out
@@ -24,13 +24,13 @@ will print out
 alternatively
 
 ```sh
-$ scala phase_two/src/main/scala/Complex.scala
+$ scala phase_2/src/main/scala/Complex.scala
 ```
 
 ### String collections
 
 ```sh
-$ sbt "phase_two/run-main StringCollection"
+$ sbt "phase_2/run-main StringCollection"
 ```
 
 will print out
@@ -44,20 +44,20 @@ class StringCollection() {
     } yield line
 object StringCollection {
   def main(args: Array[String]): Unit = {
-      longLine <- new StringCollection().lineLongerThan(new FileInputStream("./phase_two/src/main/scala/StringCollection.scala"))(10)
+      longLine <- new StringCollection().lineLongerThan(new FileInputStream("./phase_2/src/main/scala/StringCollection.scala"))(10)
     } println(longLine)
 ```
 
 alternatively
 
 ```sh
-$ scala phase_two/src/main/scala/StringCollection.scala
+$ scala phase_2/src/main/scala/StringCollection.scala
 ```
 
 ### Factorial
 
 ```sh
-$ sbt "phase_two/runMain Factorial"
+$ sbt "phase_2/runMain Factorial"
 ```
 
 will print out
@@ -69,13 +69,13 @@ Factorial of 10 recursively - 3628800
 alternatively
 
 ```sh
-$ scala phase_two/src/main/scala/Factorial.scala
+$ scala phase_2/src/main/scala/Factorial.scala
 ```
 
 ### Product of List.range(1, 100)
 
 ```sh
-$ sbt "phase_two/run-main Product"
+$ sbt "phase_2/run-main Product"
 ```
 
 will print out
@@ -89,13 +89,13 @@ The product of `List.range(1, 100)` calculated recursively 0
 alternatively
 
 ```sh
-$ scala phase_two/src/main/scala/Product.scala
+$ scala phase_2/src/main/scala/Product.scala
 ```
 
 ### Fibonacci
 
 ```sh
-$ sbt "phase_two/run-main Fibonacci"
+$ sbt "phase_2/run-main Fibonacci"
 ```
 
 will print out
@@ -108,7 +108,7 @@ Tenth fibonacci number is 55
 alternatively
 
 ```sh
-$ scala phase_two/src/main/scala/Fibonacci.scala
+$ scala phase_2/src/main/scala/Fibonacci.scala
 ```
 
 ## Phase 1
@@ -118,7 +118,7 @@ $ scala phase_two/src/main/scala/Fibonacci.scala
 How to say `"hello world!"`
 
 ```sh
-$ sbt "phase_one/run-main HelloWorld"
+$ sbt "phase_1/run-main HelloWorld"
 ```
 
 will print out
@@ -130,13 +130,13 @@ Hello world!
 Alternatively
 
 ```sh
-$ scala phase_one/src/main/scala/HelloWorld.scala
+$ scala phase_1/src/main/scala/HelloWorld.scala
 ```
 
 How to say `hello` to anybody
 
 ```sh
-$ sbt "phase_one/run-main HelloWorld Alex Dima"
+$ sbt "phase_1/run-main HelloWorld Alex Dima"
 ```
 
 will print out
@@ -149,7 +149,7 @@ Hello Dima!
 Alternatively
 
 ```sh
-$ scala phase_one/src/main/scala/HelloWorld.scala Alex Dima
+$ scala phase_1/src/main/scala/HelloWorld.scala Alex Dima
 ```
 
 ### Person
@@ -157,7 +157,7 @@ $ scala phase_one/src/main/scala/HelloWorld.scala Alex Dima
 How to know my current age ;)
 
 ```sh
-$ sbt "phase_one/run-main Person"
+$ sbt "phase_1/run-main Person"
 ```
 
 will print out something similar to
@@ -169,7 +169,7 @@ Alex is 26 years old
 Alternatively
 
 ```sh
-$ scala phase_one/src/main/scala/Person.scala
+$ scala phase_1/src/main/scala/Person.scala
 ```
 
 ### Prime numbers
@@ -177,7 +177,7 @@ $ scala phase_one/src/main/scala/Person.scala
 How to test default list on existing a prime number in the list
 
 ```sh
-$ sbt "phase_one/run-main PrimeNumbers"
+$ sbt "phase_1/run-main PrimeNumbers"
 ```
 
 will print out
@@ -190,13 +190,13 @@ List(1, 2, 3, 4, 5) contains at least one prime number
 Alternatively
 
 ```sh
-$ scala phase_one/src/main/scala/PrimeNumbers.scala
+$ scala phase_1/src/main/scala/PrimeNumbers.scala
 ```
 
 How to test specified list
 
 ```sh
-$ sbt "phase_one/run-main PrimeNumbers 2 4 6 9 11"
+$ sbt "phase_1/run-main PrimeNumbers 2 4 6 9 11"
 ```
 
 will print out
@@ -209,7 +209,7 @@ List(2, 4, 6, 9, 11) contains at least one prime number
 Alternatively
 
 ```sh
-$ scala phase_one/src/main/scala/PrimeNumbers.scala 2 4 6 9 11
+$ scala phase_1/src/main/scala/PrimeNumbers.scala 2 4 6 9 11
 ```
 
 ### Odd numbers
@@ -217,7 +217,7 @@ $ scala phase_one/src/main/scala/PrimeNumbers.scala 2 4 6 9 11
 How to test default list on existing a prime number in the list
 
 ```sh
-$ sbt "phase_one/run-main OddNumbers"
+$ sbt "phase_1/run-main OddNumbers"
 ```
 
 will print out
@@ -230,13 +230,13 @@ Sum of odds numbers in List(1, 2, 3, 4, 5) equals to 9
 Alternatively
 
 ```sh
-$ scala phase_one/src/main/scala/OddNumbers.scala
+$ scala phase_1/src/main/scala/OddNumbers.scala
 ```
 
 How to test specified list
 
 ```sh
-$ sbt "phase_one/run-main OddNumbers 2 4 6 9 11"
+$ sbt "phase_1/run-main OddNumbers 2 4 6 9 11"
 ```
 
 will print out
@@ -249,5 +249,5 @@ Sum of odds numbers in List(2, 4, 6, 9, 11) equals to 20
 Alternatively
 
 ```sh
-$ scala phase_one/src/main/scala/OddNumbers.scala 2 4 6 9 11
+$ scala phase_1/src/main/scala/OddNumbers.scala 2 4 6 9 11
 ```

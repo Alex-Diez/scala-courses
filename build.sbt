@@ -12,12 +12,16 @@ lazy val common = Seq(
 )
 
 lazy val root = Project("scala-courses", file("."))
-  .aggregate(phase_one, phase_two)
+  .aggregate(phase_1, phase_2, phase_3)
 
-lazy val phase_one = project.in(file("phase_one"))
+lazy val phase_1 = project.in(file("phase_1"))
   .settings(common: _*)
   .settings(name := "phase-1")
 
-lazy val phase_two = project.in(file("phase_two"))
+lazy val phase_2 = project.in(file("phase_2"))
   .settings(common: _*)
   .settings(name := "phase-2")
+
+lazy val phase_3 = project.in(file("phase_3"))
+  .settings(common: _*)
+  .settings(name := "phase-3")

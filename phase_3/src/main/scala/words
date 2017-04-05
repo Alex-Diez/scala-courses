@@ -1,0 +1,8 @@
+Text to Speech converts written text into natural sounding audio in a variety of languages
+and voices You can customize and control the pronunciation of specific words to deliver a
+seamless voice interaction that catered s to your audience Use text to speech to develop
+interactive toys for children automate call center interactions and communicate directions
+hands-free The text language must match the selected voice language Mixing language (English
+text with a Spanish male voice) does not produce valid results The synthesized audio is
+streamed to the client as it is being produced using the HTTP chunked encoding the audio is
+returned in The Ogg Opus format which can be played using VLC and Audacity players

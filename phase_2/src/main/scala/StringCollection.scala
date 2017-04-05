@@ -1,4 +1,4 @@
-import java.io.{File, FileInputStream, InputStream}
+import java.io.{FileInputStream, InputStream}
 
 import scala.io.Source
 
@@ -13,7 +13,7 @@ class StringCollection() {
 object StringCollection {
   def main(args: Array[String]): Unit = {
     for {
-      longLine <- new StringCollection().lineLongerThan(new FileInputStream("./phase_two/src/main/scala/StringCollection.scala"))(10)
+      longLine <- new StringCollection().lineLongerThan(new FileInputStream("./phase_2/src/main/scala/StringCollection.scala"))(10)
     } println(longLine)
   }
 }
