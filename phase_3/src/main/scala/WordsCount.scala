@@ -1,7 +1,7 @@
 import scala.collection.mutable
 import scala.io.Source
 
-class WordCounts(counters: mutable.Map[String, Int]) {
+class WordsCount(counters: mutable.Map[String, Int]) {
   def count(text: String): Map[String, Int] = {
     if (text.isEmpty) Map.empty
     else {
@@ -19,15 +19,15 @@ class WordCounts(counters: mutable.Map[String, Int]) {
   }
 }
 
-object WordCounts {
-  def apply(mapType: String): WordCounts = mapType match {
-    case "hash" => new WordCounts(new mutable.HashMap[String, Int]())
-    case "tree" => new WordCounts(new mutable.TreeMap[String, Int]())
+object WordsCount {
+  def apply(mapType: String): WordsCount = mapType match {
+    case "hash" => new WordsCount(new mutable.HashMap[String, Int]())
+    case "tree" => new WordsCount(new mutable.TreeMap[String, Int]())
     case _ => throw new UnsupportedOperationException("program supports only tree or hash map")
   }
 }
 
-object WordCountsMain {
+object WordsCountMain {
   def main(args: Array[String]): Unit = {
     args match {
       case Array() =>
@@ -35,7 +35,7 @@ object WordCountsMain {
         System.exit(1)
       case Array(mapType) =>
         val line = Source.fromFile("./phase_3/src/main/scala/words").getLines().foldLeft("")((acc, item) => acc + item + " ")
-        for ((word, count) <- WordCounts(mapType).count(line)) {
+        for ((word, count) <- WordsCount(mapType).count(line)) {
           val time = count match {
             case 1 => "time"
             case _ => "times"

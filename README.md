@@ -51,7 +51,7 @@ $ scala phase_3/src/main/scala/ListMagic.scala
 ### WordCounts
 
 ```sh
-$ sbt "phase_3/run-main WordCountsMain [hash|tree]"
+$ sbt "phase_3/run-main WordsCountsMain [hash|tree]"
 ```
 
 will print out
