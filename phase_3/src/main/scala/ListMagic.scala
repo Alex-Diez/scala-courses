@@ -36,6 +36,8 @@ object ListMagic {
     println(s"$theList should${if (theList.exists(_ > 1)) "" else " not"} contain items greater than 1")
     println(s"$theList's items should be mapped in `theList.map(_ * 3)` ${theList.map(_ * 3)}")
     println(s"$theList's items less than 1 should be filtered out by (_ > 1) ${theList.filter(_ > 1)}")
+    println(s"$theList folded left into string ${theList.foldLeft(new StringBuilder)((acc, item) => acc.append(item))}")
+    println(s"$theList folded right into string ${theList.foldRight(new StringBuilder)((item, acc) => acc.append(item))}")
     println(s"$theList should be folded left into ${theList.foldLeft(10)(_ + _)}")
     println(s"$theList should be reversed when folded left with ${List()} as accumulator.\n\t" +
       s"theList.foldLeft(List[Int]())((acc, item) => item :: acc) == theList.reverse is " +
