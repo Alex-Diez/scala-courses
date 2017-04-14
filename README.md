@@ -4,6 +4,51 @@
 * [Questions that I faced and want to find answers](QUESTIONS.md)
 * [What I learnt when complete particular exercise](WHAT-I-LEARNT.md)
 
+## Phase 4
+
+### Animal
+
+```sh
+$ sbt "phase_4/run-main AnimalsMain"
+```
+
+will print out
+
+```sh
+cow is not ready to be cocked...
+cow is not ready to be cocked...
+cow is not ready to be cocked...
+cow is not ready to be cocked...
+cow is not ready to be cocked...
+cow is not ready to be cocked...
+cow is not ready to be cocked...
+cow is not ready to be cocked...
+cow is not ready to be cocked...
+cow is not ready to be cocked...
+Bob is saying 'nom-nom'. The steak was delicious
+Bob is saying 'nom-nom'. The steak was delicious
+Bob is saying 'nom-nom'. The steak was delicious
+Bob is saying 'nom-nom'. The steak was delicious
+Bob is saying 'nom-nom'. The steak was delicious
+Bob is saying 'nom-nom'. The steak was delicious
+Bob is saying 'nom-nom'. The steak was delicious
+Bob is saying 'nom-nom'. The steak was delicious
+Bob is saying 'nom-nom'. The steak was delicious
+Bob is saying 'nom-nom'. The steak was delicious
+```
+
+alternatively
+
+```sh
+$ scala phase_4/src/main/scala/Animal.scala
+```
+
+### List
+
+```sh
+$ sbt "phase_4/testOnly PersistenceListTest"
+```
+
 ## Phase 3
 
 ### ListMagic
@@ -12,7 +57,7 @@
 $ sbt "phase_3/run-main ListMagic"
 ```
 
-will print our
+will print out
 
 ```sh
 4 should be added in front of List(1, 2, 3) in `4 :: theList` List(4, 1, 2, 3)
