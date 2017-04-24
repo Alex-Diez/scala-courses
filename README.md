@@ -4,6 +4,52 @@
 * [Questions that I faced and want to find answers](QUESTIONS.md)
 * [What I learnt when complete particular exercise](WHAT-I-LEARNT.md)
 
+## Phase 5
+
+### Asynchronous words count
+
+```sh
+$ sbt "phase_5/run-main AsyncWordsCount"
+```
+
+will print out
+
+```sh
+The format appears 1 time
+The for appears 1 time
+The s appears 1 time
+The produce appears 1 time
+The Use appears 1 time
+The children appears 1 time
+The in appears 2 times
+The your appears 1 time
+...
+```
+
+Alternatively
+
+```sh
+$ scala phase_5/src/main/scala/AsyncWordsCount.scala
+```
+
+### XML parser
+
+```sh
+$ sbt "phase_5/run-main XMLParser"
+```
+
+will print out
+
+```sh
+[18.1] parsed: (((((<~project)~None)~Some(List((xsi~Some((((None~=)~None...
+```
+
+Alternatively
+
+```sh
+$ scala phase_5/src/main/scala/XMLParser.scala
+```
+
 ## Phase 4
 
 ### Animal
